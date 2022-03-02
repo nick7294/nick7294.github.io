@@ -1,0 +1,18 @@
+p.rámik {
+    border-left: 5px dashed red;
+    border-right:5px dashed rgb(187, 38, 162);
+    background-color: lightgrey;
+    font-size: 50px;
+    font-family: Fantasy;
+    text-align: center;
+
+
+  }
+h1 {
+    color: rgb(125, 93, 199);
+
+}
+b {
+    font-size: 35px;
+    color:rgb(73, 190, 102);
+}
