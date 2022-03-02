@@ -10,9 +10,20 @@ p.rámik {
   }
 h1 {
     color: rgb(125, 93, 199);
+    text-align: center;
 
 }
 b {
     font-size: 35px;
     color:rgb(73, 190, 102);
+    text-align: center;
+}
+body {
+    text-align: center;
+}
+.center {
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
