@@ -155,34 +155,86 @@ p {
 </head>
 <body>
 <section>
-  <div class="drop-down">
-		<p class="drop-down-trigger">Click me to see the drop-down text</p>
-		<div class="drop-down-content">
-			<p>This is the drop-down text that will be displayed when you click the above text.</p>
-		</div>
-	</div>
+
 <div class="cont">
  
-  <div class="drop-down">
-		<p class="drop-down-trigger">Click me to see the drop-down txt</p>
-		<div class="drop-down-content">
-  <div class=“text-fld” style="font-size: 16px !important;">The Fourier Image Compressor is an app that allows you to compress your images using the Fourier transform. The Fourier transform converts your image into a combination of waves with different frequencies and amplitudes. You can then adjust how many waves you want to retain and see how it affects your image size and quality. You can also view your image in the wave domain and compare it with other images. FIC is an app that helps you understand the principles of image compression and wave domain. Download FIC now and experience the power of the Fourier transform!</div></div>
-</div>
-</div>
+
+  <div class=“text-fld” style="font-size: 16px !important;">The Fourier Image Compressor is an app that allows you to compress your images using the Fourier transform. The Fourier transform converts your image into a combination of waves with different frequencies and amplitudes. You can then adjust how many waves you want to retain and see how it affects your image size and quality. You can also view your image in the wave domain and compare it with other images. FIC is an app that helps you understand the principles of image compression and wave domain. Download FIC now and experience the power of the Fourier transform!
+  </div>
 </section>
 <section id="imgcompress">
-<div class="main">
+
 <h2>Image compression</h2>
 <div class="cont"><div class=“text-fld” style="font-size: 16px !important;">Fourier Image Compressor is an app that lets you shrink your images by using a clever math trick called the Fourier transform. This trick changes your image into a bunch of waves with different colors and strengths. You can pick how many waves you want to keep by sliding a bar. The more waves you keep, the better your image looks and the bigger it is. The fewer waves you keep, the worse your image looks and the smaller it is. FIC then turns your image back to normal and lets you save or share it.</div></div>
 
+<div class="cont">
 
+<!-- The button that triggers the dropdown -->
+<button class="dropbtn">Image compression</button>
 
+<!-- The container <div> - needed to position the dropdown content -->
+<div class="dropdown">
+  <!-- Dropdown Content (Hidden by Default) -->
+  <div class="dropdown-content">
+    
+    <!-- Your HTML sector goes here -->
+    <section id="imgcompress">
+      <div class="cont">
+      <div class="main">
+        <h2>Image compression</h2>
+        <div style="font-size: 16px !important;">Fourier Image Compressor is an app that lets you shrink your images by using a clever math trick called the Fourier transform. This trick changes your image into a bunch of waves with different colors and strengths. You can pick how many waves you want to keep by sliding a bar. The more waves you keep, the better your image looks and the bigger it is. The fewer waves you keep, the worse your image looks and the smaller it is. FIC then turns your image back to normal and lets you save or share it.</div>
+      </section>
+  </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- Add some CSS for styling -->
+<style>
+/* Dropdown Button */
+.dropbtn {
+  background-color: #f8f9fa;
+  color: black;
+  font-size: 16px;
+  border: none;
+}
 
-  </section>
-  <section id="viewcomp">
-    <h2>View compressed</h2>
-    <div class="cont"><div class=“text-fld” style="font-size: 16px !important;">Fourier Image Compressor also lets you see your image in the wave domain without changing it back to normal. This can help you learn how the wave domain works and how it relates to your image quality and size. You can also compare different images in the wave domain and see how they differ in their wave patterns.</div></div>
-  </section>
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+/* Show the dropdown menu on hover */
+.dropbtn:hover + .dropdown .dropdown-content {
+    display:block; 
+}
+</style>
+
+<!-- Add some JavaScript for functionality -->
+<script>
+// Get the button element
+var btn = document.querySelector(".dropbtn");
+
+// Get the dropdown content element
+var content = document.querySelector(".dropdown-content");
+
+// Toggle between showing and hiding the dropdown content when clicking on the button
+btn.onclick = function() {
+    if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+};
+</script>
   <section id="defcol"></section>
     <h2>Default colourless</h2>
     <div class="cont"><div class=“text-fld” style="font-size: 16px !important;">Fourier Image Compressor only works with black and white images for now when you use the wave domain feature. Black and white images have less data than color images, so they are easier to compress and compare. They also let you focus on what details are lost or kept when you change the number of waves. We are working on adding color images soon.</div></div>
