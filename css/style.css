@@ -287,7 +287,7 @@ figure.effect-oscar:hover img {
 /* Styles
 ---------------------------------*/
 body {
-    background: #fff;
+    background: #fefefe;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -810,6 +810,7 @@ a.contact_btn:hover {
 
 #Portfolio {
     padding: 60px 0px;
+    color: white !important;
 }
 
 .Portfolio-nav {

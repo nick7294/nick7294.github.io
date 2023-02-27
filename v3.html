@@ -65,15 +65,35 @@ function draw() {
    // display original and compressed images side by side
    image(img, width /2 - img.width /2 , height /2 - img.height /2 );
    image(compressed,width /2 + img.width /2 , height /2 - img.height /2 );
-   
+
    var compressionRatio = 0;
 var slider = document.getElementById("myRange");
 slider.addEventListener("input", function() {
   compressionRatio = this.value;
   console.log(compressionRatio);
 }
-
-});
+,});
 </script>
+<section id="imgcompress">
+  <button id="someBtnId">Show text</button>
+<h2 id="para_1">Image compression</h2>
+<div ip="para_2" class="cont"><div class=“text-fld” style="font-size: 16px !important;">Fourier Image Compressor is an app that lets you shrink your images by using a clever math trick called the Fourier transform. This trick changes your image into a bunch of waves with different colors and strengths. You can pick how many waves you want to keep by sliding a bar. The more waves you keep, the better your image looks and the bigger it is. The fewer waves you keep, the worse your image looks and the smaller it is. FIC then turns your image back to normal and lets you save or share it.</div></div>
+
+  
+  <script>
+  const btn = document.getElementById("someBtnId");
+  const para_1 = document.getElementById("para_1");
+  const para_2 = document.getElementById("para_2");
+  
+  btn.addEventListener("click", function() {
+    if (para_2.style.display == "none") {
+      para_2.style.display = "block";
+      para_1.style.display = "none";
+    } else {
+      para_2.style.display = "none";
+      para_1.style.display = "block";
+    }
+  });
+  </script>
 </body>
 </html>
