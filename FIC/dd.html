@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drop-down1 Text Example</title>
+	<style>
+		.drop-down1-content {
+			display: none;
+		}
+		.drop-down1.active .drop-down1-content {
+			display: block;
+		}
+        .drop-down1-trigger {
+		background-color: #f8f9fa;
+		border: 1px solid #e2e2e2;
+		border-radius: 8px;
+		padding: 12px 16px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="drop-down1">
+		<p class="drop-down1-trigger">Click me to see the drop-down1 text</p>
+		<div class="drop-down1-content">
+			<p>This is the drop-down1 text that will be displayed when you click the above text.</p>
+		</div>
+	</div>
+
+	<script>
+		var dropDown = document.querySelector('.drop-down1');
+		var dropDownTrigger = document.querySelector('.drop-down1-trigger');
+
+		dropDownTrigger.addEventListener('click', function() {
+			dropDown.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>
