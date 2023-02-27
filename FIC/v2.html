@@ -1,0 +1,125 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Define base colors */
+    :root {
+      --primary-color: #4a90e2;
+      --secondary-color: #f5f5f5;
+      --tertiary-color: #333333;
+    }
+
+    /* Use tints and shades of base colors */
+    .container {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+    }
+
+    .content {
+      background-color: var(--secondary-color);
+      color: var(--tertiary-color);
+      padding: 20px;
+    }
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .text {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+    }
+
+    /* Use different styles for headings, text and links */
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+     <!-- Use a div element with a title class instead of an h1 element -->
+     <div class="title">Fourier Image Compressor</div>
+  </div>
+  <div class="content">
+     <!-- Your original content goes here -->
+     <!-- Use div elements with a text class instead of p elements -->
+     <div class="text">Have you ever wondered how you can make your images smaller without losing too much quality? Sometimes you might want to do this to save space on your device or to share your images faster online. In this article, we will introduce you to a cool app that lets you do just that:</div>
+
+     <!-- Add some JavaScript code to make the app more interactive -->
+     <script>
+       // Get the input element
+       var input = document.getElementById("input");
+
+       // Get the output element
+       var output = document.getElementById("output");
+
+       // Get the slider element
+       var slider = document.getElementById("slider");
+
+       // Get the value element
+       var value = document.getElementById("value");
+
+       // Define a function that updates the output image based on the input image and the slider value
+       function updateOutput() {
+
+         // Get the input image source
+         var inputSrc = input.src;
+
+         // Get the slider value
+         var sliderValue = slider.value;
+
+         // Set the value element text
+         value.textContent = sliderValue + "%";
+
+         // Set the output image source by appending a query parameter with the slider value
+         output.src = inputSrc + "?data=" + sliderValue;
+
+       }
+
+       // Call the updateOutput function when the page loads
+       window.onload = updateOutput;
+
+       // Call the updateOutput function when the slider changes
+       slider.oninput = updateOutput;
+
+     </script>
+
+     <!-- Add some HTML elements for displaying images -->
+     <img id="input" src="https://nick7294.github.io/FIC/imgcomp.html/image.jpg" alt="Input image" width="256" height="256">
+     <img id="output" src="" alt="Output image">
+
+     <!-- Add some HTML elements for controlling compression -->
+     <label for="slider">Data:</label>
+     <input id="slider" type="range" min="0" max="100" step="10" value="50">
+     <span id="value"></span>
+
+   </div>
+
+   <!-- Include all other text from your original site -->
+
+   <div class='content'>
+        Fourier Image Compressor is based on a clever math trick called Fourier transform. This trick allows us to change any image into bunch of waves with different colors and strengths. These waves are called frequency components and they represent how much each color changes across an image. For example high frequency component means that color changes rapidly from one pixel to another while low frequency component means that color changes slowly or stays same.
+
+        The amazing thing about Fourier transform is that we can go back and forth between original image and frequency components without losing any information. This means that we can reconstruct our image exactly as it was by adding up all waves together. However we can also choose to keep only some of waves and discard rest. This will make our image smaller but also less accurate.
+
+        That's where Fourier Image Compressor comes in handy. It lets you pick how
+
+
+        much data you want to keep and shows you how your image looks like with different levels of compression. You can also compare your compressed image with original one and see how much space you saved.
+
+        To use Fourier Image Compressor simply upload your image file and move slider to adjust data level. You will see compressed image on right side and original image on left side. You can also download compressed image as PNG file by clicking on download button.
+
+        Fourier Image Compressor works best with images that have smooth gradients and few sharp edges. Images that have lots of details and noise will not compress well and may look distorted or blurry. Try it out with different images and see how it works for yourself!
+
+        If you want to learn more about Fourier transform and how it works check out this awesome video by 3Blue1Brown: https://www.youtube.com/watch?v=spUNpyF58BY
+    </div>
+</body>
+</html>
