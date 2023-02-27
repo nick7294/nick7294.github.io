@@ -1,0 +1,71 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+<body>
+<div id="slider">
+<input type="range" min="0" max="1" value="0" step="0.01" id="compression">
+<label for="compression">Compression ratio: <span id="ratio">0</span></label>
+</div>
+<div id="canvas"></div>
+<script>
+
+let img;
+let fft;
+let compressed;
+
+function preload() {
+  img = loadImage('https://c-static.smartphoto.com/structured/repositoryimage/tilegroup/shops/pets/dogs/tileimages/tileimage1x1/image/dogs-tileimage-1x1.jpg');
+}
+
+function setup() {
+  createCanvas(800, 600);
+  fft = new p5.FFT();
+  compressed = createImage(img.width, img.height);
+}
+
+function draw() {
+  background(220);
+  
+  let c = document.getElementById("compression").value;
+  document.getElementById("ratio").innerHTML = c;
+  
+  // convert image to grayscale
+  img.filter(GRAY);
+  
+  // apply Fourier transform to image pixels
+  let pixels = img.pixels.map(p => p / 255);
+  let spectrum = fft.analyze(pixels);
+  
+  // sort spectrum by magnitude
+  let sorted = spectrum.slice().sort((a,b) => b - a);
+  
+  // find threshold value based on compression ratio
+  let k = floor(c * spectrum.length);
+  let threshold = sorted[k];
+  
+  // filter out frequencies below threshold
+  let filtered = spectrum.map(f => f >= threshold ? f : 0);
+  
+   // apply inverse Fourier transform to filtered frequencies
+   let inverse = fft.inverse(filtered);
+
+   // map inverse values back to pixel range
+   let output = inverse.map(v => map(v, -1, +1, -255, +255));
+   
+   // update compressed image with output pixels
+   compressed.loadPixels();
+   for (let i = 0; i < output.length; i++) {
+     compressed.pixels[i] = output[i];
+   }
+   compressed.updatePixels();
+   
+   // display original and compressed images side by side
+   image(img, width /2 - img.width /2 , height /2 - img.height /2 );
+   image(compressed,width /2 + img.width /2 , height /2 - img.height /2 );
+}
+</script>
+</body>
+</html>
