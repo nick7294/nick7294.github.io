@@ -290,15 +290,59 @@
 </section>
 
 <!--Footer-->
-<footer class="footer_wrapper" id="contact">
-  <div class="container">
-    <section class="page_section contact" id="contact">
-      <div class="contact_section">
-        <h2>Download</h2>
-     
-      </div>
-     
-  
+
+        <footer class="footer_wrapper" id="contact">
+          <div class="container">
+            <section class="page_section contact" id="contact">
+              <div class="contact_section">
+                <h2>Download</h2>
+                <div class="button_wrapper">
+                  <button class="btn btn-primary" onclick="window.location.href='https://github.com/nick7294/nick7294.github.io/tree/main/app'">github</button>
+
+                  <button class="btn btn-secondary" onclick="window.location.href='https://drive.google.com/file/d/1bO7xy0Fn3mzZ4RUQaMIjG1UasSMU5ARZ/view?usp=sharing'">exe app</button>
+                </div>
+              </div>
+            </section>  
+          </div>
+        </footer>
+        <style>
+        .button_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        }
+        
+        .btn {
+        flex: 0,25; /* Make all buttons the same size */
+        margin: 0 5px; /* Add a small margin between buttons */
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        }
+        
+        .btn-primary {
+
+          background-image: linear-gradient(225deg, #2fa572 50%, #5c5c5c);
+          color: #fff;
+
+        }
+        
+        .btn-secondary {
+          background-image: linear-gradient(45deg, #2fa572 50%, #5c5c5c);
+        color: #fff !important;
+        margin-left: 10px;
+        }
+        .btn:active {
+         background-color: #2fa572;
+        }
+        .btn-secondary:hover {
+        color: #fff !important;
+        }
+
+
+
+  </style>
+  </div>
   <div class="container">
     <div class="footer_bottom"><span>Copyright © reserved,    Template by <a href="http://webthemez.com">WebThemez.com</a>. </span> </div>
   </div>
