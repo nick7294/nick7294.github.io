@@ -32,14 +32,13 @@ def loading():
     label1=Label(w, text='FIC', fg='green', bg='#272727') 
     label1.configure(font=("Game Of Squids", 24, "bold"))
     label1.place(x=185,y=90)
-
     label2=Label(w, text='Loading...', fg='green', bg='#272727')
     label2.configure(font=("Calibri", 11))
     label2.place(x=10,y=215)
 
 
-    image_a=ImageTk.PhotoImage(Image.open(r"C:\Users\ssosta\Desktop\fft\tester\c2.png"))
-    image_b=ImageTk.PhotoImage(Image.open(r"C:\Users\ssosta\Desktop\fft\tester\c1.png"))
+    image_a=ImageTk.PhotoImage(Image.open(r"images/c2.png"))
+    image_b=ImageTk.PhotoImage(Image.open(r"images/c1.png"))
 
 
 
@@ -88,7 +87,7 @@ customtkinter.set_default_color_theme("green")
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
-        self.iconbitmap(r'C:\Users\ssosta\Desktop\fft\tester\app.ico')
+        self.iconbitmap(r'images/app.ico')
         
 
         result_text = tkinter.StringVar()
@@ -173,7 +172,6 @@ class App(customtkinter.CTk):
             if not file_path:
                 print("No file selected.")
                 return
-
             dark_image = plt.imread(file_path)
             fourier_masker_hor(dark_image, 1)
         
@@ -219,7 +217,7 @@ class App(customtkinter.CTk):
             self.title("Image Compression")
             self.textbox_1 = customtkinter.CTkTextbox(self, width=250, font=customtkinter.CTkFont(size=14), wrap = "word")
             self.textbox_1.grid(row=0, column=1, padx=(20, 20), pady=(20, 20), sticky="nsew")
-            self.textbox_1.insert("0.0", "Image Compression\n\n" + "This function lets you shrink your images by using a clever math trick called the Fourier transform. This trick changes your image into a bunch of waves with different colors and strengths. You can pick how many waves you want to keep by putting in the % of data you want to keep. The more waves you keep, the better your image looks and the bigger it is. The fewer waves you keep, the worse your image looks and the smaller it is. FIC then turns your image back to normal and lets you save or share it.\n\n" + "For more information visit our website")
+            self.textbox_1.insert("0.0", "Image Compression\n\n" + "This function lets you shrink your images by using a clever math trick called the Fourier transform. This trick changes your image into a bunch of waves with different colors and strengths. You can pick how many waves you want to keep by putting in the % of data you want to keep. The more waves you keep, the better your image looks and the bigger it is. The fewer waves you keep, the worse your image looks and the smaller it is. FIC then turns your image back to normal and lets you save or share it.\n\n" + "For more information visit our website\n\n"  + "WARNING: values have to be numerical and in the following format: [11.4]")
             self.textbox_1.tag_add("hyper", "5.0", "5.end")
             self.textbox_1.tag_config("hyper", foreground="#2CC572", underline=True)
             self.textbox_1.tag_add("bold", "5.0", "5.end")
@@ -249,7 +247,7 @@ class App(customtkinter.CTk):
             self.title("SSIM Calculation")
             self.textbox_2 = customtkinter.CTkTextbox(self, width=250, font=customtkinter.CTkFont(size=14), wrap = "word")
             self.textbox_2.grid(row=0, column=1, padx=(20, 20), pady=(20, 20), sticky="nsew")
-            self.textbox_2.insert("0.0", "SSIM Calculation\n\n" + "Fourier Image Compressor also lets you compare your compressed images using a metric called SSIM (Structural Similarity Index Measure). SSIM is a way of measuring how similar two images are based on their structural information. Structural information refers to the patterns of pixels that form edges and shapes in your image. SSIM can help you evaluate how well your compression preserves the important details of your image and how close it is to the original image.\n\n" + "For more information visit our website")
+            self.textbox_2.insert("0.0", "SSIM Calculation\n\n" + "Fourier Image Compressor also lets you compare your compressed images using a metric called SSIM (Structural Similarity Index Measure). SSIM is a way of measuring how similar two images are based on their structural information. Structural information refers to the patterns of pixels that form edges and shapes in your image. SSIM can help you evaluate how well your compression preserves the important details of your image and how close it is to the original image.\n\n" + "For more information visit our website\n\n" + "WARNING: compared images have to have the same dimensions")
             self.textbox_2.tag_add("hyper", "5.0", "5.end")
             self.textbox_2.tag_config("hyper", foreground="#2CC572", underline=True)
             self.textbox_2.tag_add("bold", "5.0", "5.end")
@@ -347,22 +345,8 @@ class App(customtkinter.CTk):
         self.sidebar_button_3.configure()
         self.appearance_mode_optionemenu.set("Dark")
 
-
-
-    def open_input_dialog_event(self):
-        dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
-
-        self.main_button_1 = customtkinter.CTkButton(master=self, text="Vybrať obrázok", font=customtkinter.CTkFont(), fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"))
-        self.main_button_1.grid(row=0, column=3, padx=(20, 20), pady=(20, 20), sticky="nsew")
-        print("CTkInputDialog:", dialog.get_input())
-
     def change_appearance_mode_event(self, new_appearance_mode: str):
         customtkinter.set_appearance_mode(new_appearance_mode)
-
-
-
-
-
 
 if __name__ == "__main__":
     app = App()
