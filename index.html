@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 <title>Fourier image compressor website</title>
-<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="icon" href="img/app-1.png" type="image/png">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 <link href="css/style.css" rel="stylesheet" type="text/css"> 
@@ -33,12 +33,12 @@
               <h2> Fourier transform <br/><strong>The Fascinatung algorithm</strong></h2>
               </div>
 			  
-		<img class="" src="img/slide1.jpg" alt=""></div>
+		<img class="" src="img/slide1.png" alt=""></div>
         <div class="item">
 		<div class="caption zoomIn wow animated"> 		 			 
               <h2>Explained<br/><strong>in a nice, simple way</strong></h2>
               </div>
-			  <img class="" src="img/slide2.jpg" alt=""></div>
+			  <img class="" src="img/simple-expl.png" alt=""></div>
         <div class="item">
 		<div class="caption zoomIn wow animated"> 		 			
               <h2>Application<br/><strong>for you to try out</strong></h2>
@@ -80,9 +80,9 @@
 
     <div class="inner_section">
  <div class="row">
-      <div class="col-md-6"> <img class="img-responsive" src="img/about11.png" align=""> </div>
+      <div class="col-md-6"> <img class="img-responsive" src="img/about001.png" align="center" style="scale: 80%; position: relative; top: -50px;"> </div>
       <div class="col-md-6">
-        <h3>Our Work</h3>
+        <h3><br><br>Our Work</h3>
         <p>We're students in Súkromná stredná odborná škola Ul. 29. augusta 4812, 058 01 Poprad, studying IT
         </p>
         <p>in the past few months, we worked on developing a working program for compressing and saving an image using the Fourier transform </p> 
@@ -290,17 +290,63 @@
 </section>
 
 <!--Footer-->
-<footer class="footer_wrapper" id="contact">
-  <div class="container">
-    <section class="page_section contact" id="contact">
-      <div class="contact_section">
-        <h2>Download</h2>
-     
-      </div>
-     
-  
-  <div class="container">
+
+        <footer class="footer_wrapper" id="contact">
+          <div class="container">
+            <section class="page_section contact" id="contact">
+              <div class="contact_section">
+                <h2>Download</h2>
+                <div class="button_wrapper">
+                  <button class="btn btn-primary" onclick="window.location.href='https://github.com/nick7294/nick7294.github.io/tree/main/app'">github</button>
+
+                  <button class="btn btn-secondary" onclick="window.location.href='https://drive.google.com/file/d/1bO7xy0Fn3mzZ4RUQaMIjG1UasSMU5ARZ/view?usp=sharing'">.exe app</button>
+                </div>
+              </div>
+            </section>  
+          </div>
+        </footer>
+        <style>
+        .button_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        }
+        
+        .btn {
+        flex: 0,25; /* Make all buttons the same size */
+        margin: 0 5px; /* Add a small margin between buttons */
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        }
+        
+        .btn-primary {
+
+          background-image: linear-gradient(225deg, #2fa572 50%, #5c5c5c);
+          color: #fff;
+
+        }
+        
+        .btn-secondary {
+          background-image: linear-gradient(45deg, #2fa572 50%, #5c5c5c);
+        color: #fff !important;
+        margin-left: 10px;
+        }
+        .btn:active {
+         background-color: #2fa572;
+        }
+        .btn-secondary:hover {
+        color: #fff !important;
+        }
+
+
+
+  </style>
+  </div>
+  <div style="background-color: black !important;color: #000;">
+  <div class="container" >
     <div class="footer_bottom"><span>Copyright © reserved,    Template by <a href="http://webthemez.com">WebThemez.com</a>. </span> </div>
+  </div>
   </div>
 </footer>
 
